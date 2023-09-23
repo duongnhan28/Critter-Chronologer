@@ -29,7 +29,7 @@ public class ScheduleEntity {
     private LocalDate date;
 
     @ElementCollection(targetClass = EmployeeSkill.class)
-    @CollectionTable(name="tblActivities")
+    @CollectionTable(name="tb_Activities")
     @Enumerated(EnumType.STRING)
     @Column(name = "activities", nullable = false)
     private Set<EmployeeSkill> activities;

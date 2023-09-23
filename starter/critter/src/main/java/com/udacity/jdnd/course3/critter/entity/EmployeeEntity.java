@@ -24,13 +24,13 @@ public class EmployeeEntity {
     String name;
 
     @ElementCollection
-    @CollectionTable(name="tblDaysAvailable")
+    @CollectionTable(name="tb_DaysAvailable")
     @Enumerated(EnumType.STRING)
     @Column(name = "daysAvailable", nullable = false)
     private Set<DayOfWeek> daysAvailable;
 
     @ElementCollection
-    @CollectionTable(name="tblSkills")
+    @CollectionTable(name="tb_Skills")
     @Enumerated(EnumType.STRING)
     @Column(name = "skills", nullable = false)
     private Set<EmployeeSkill> skills;

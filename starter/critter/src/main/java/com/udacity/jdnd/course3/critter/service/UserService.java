@@ -11,6 +11,7 @@ import com.udacity.jdnd.course3.critter.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
+@Transactional
 public class UserService {
     @Autowired
     UserRepository userRepository;
@@ -45,7 +47,7 @@ public class UserService {
             EmployeeEntity employee = optionalEmployee.get();
             return employee;
         }
-        return optionalEmployee.orElseThrow(() -> new CommonException("Not found Employee" + id));
+         return optionalEmployee.orElseThrow(() -> new CommonException("Not found Employee" + id));
     }
 
     public OwnerEntity findOwnerById(Long id){
